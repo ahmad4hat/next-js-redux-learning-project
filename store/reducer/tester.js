@@ -1,6 +1,6 @@
 
 const initialState={
-    counter:0
+    counter:5
 }
 
 
@@ -9,7 +9,7 @@ const reducer=(state=initialState,action)=>{
         case "INCREMENT":
             return {
                 ...state,
-                counter:counter+5
+                counter:state.counter+5
             }
             
             break;

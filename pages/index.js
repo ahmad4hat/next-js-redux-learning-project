@@ -24,7 +24,7 @@ import {connect} from 'react-redux';
 const Home = (props) => (
   <div >
     <h1>hello world {props.coun}</h1>
-    <Button variant="contained" color="primary">
+    <Button variant="contained" color="primary" onClick={props.incre} >
    Hello World
  </Button>
   </div>
@@ -34,8 +34,13 @@ const Home = (props) => (
 
 const mapStateToProps= state=>{
   return {
-      coun:test.counter
+      coun:state.test.counter
+  }
+}
+const mapDispatchtoProps=dispatch=>{
+  return {
+    incre : ()=>dispatch({type:"INCREMENT"})
   }
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps,mapDispatchtoProps)(Home)
